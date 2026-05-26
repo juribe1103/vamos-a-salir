@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Una Sorpresa para Ti</title>
+    <!-- [BLOQUE DE ESTILOS: FUENTES Y LOGICA VISUAL] -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* [BLOQUE 0: IDENTIDAD Y VARIABLES GLOBALES] */
+        :root {
+            --color-principal: #111111;
+            --color-acento: #c5a880; /* Dorado elegante */
+            --color-fondo: #faf9f6;
+            --color-texto: #333333;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--color-fondo);
+            color: var(--color-texto);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* [BLOQUE 1: NÚCLEO Y VISTAS (CONTENEDOR PRINCIPAL)] */
+        .tarjeta-invitacion {
+            background: #ffffff;
+            max-width: 450px;
+            width: 90%;
+            margin: 20px auto;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            text-align: center;
+            border: 1px solid rgba(197, 168, 128, 0.2);
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            color: var(--color-acento);
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitulo {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #777;
+            margin-bottom: 25px;
+        }
+
+        .linea-separadora {
+            width: 60px;
+            height: 2px;
+            background-color: var(--color-acento);
+            margin: 20px auto;
+        }
+
+        /* [BLOQUE 2: CONTADOR REGRESIVO] */
+        .seccion-contador {
+            background-color: var(--color-principal);
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 25px 0;
+        }
+        
+        .seccion-contador p {
+            margin: 0 0 10px 0;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--color-acento);
+        }
+
+        .contador {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .bloque-tiempo {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .numero-tiempo {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .etiqueta-tiempo {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: #aaa;
+        }
+
+        /* [BLOQUE 3: DETALLES DE LA CITA] */
+        .detalle-item {
+            margin: 20px 0;
+            text-align: left;
+            padding-left: 15px;
+            border-left: 3px solid var(--color-acento);
+        }
+
+        .detalle-item h3 {
+            margin: 0 0 5px 0;
+            font-size: 1rem;
+            color: var(--color-principal);
+        }
+
+        .detalle-item p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.4;
+        }
+
+        /* [BLOQUE 4: REPRODUCTOR SPOTIFY DINÁMICO] */
+        .seccion-playlist {
+            background: #f0ebe1;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 25px;
+            border: 1px dashed var(--color-acento);
+        }
+
+        .nota-locutor {
+            font-size: 0.85rem;
+            margin-top: 15px;
+            color: var(--color-principal);
+            font-weight: 600;
+            text-align: left;
+            border-left: 2px solid var(--color-acento);
+            padding-left: 10px;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- [CONTRUCCIÓN VISUAL DE LA INVITACIÓN] -->
+    <div class="tarjeta-invitacion">
+        
+        <h1>Para mi Esposa</h1>
+        <div class="subtitulo">6 Años de Historia</div>
+        
+        <p>No es nuestro aniversario, pero hoy me desperté con unas ganas inmensas de darte las gracias por estos 6 años juntos. Gracias por ser mi compañera, mi confidente y el amor de mi vida. Por eso, este sábado es nuestro.</p>
+        
+        <div class="linea-separadora"></div>
+
+        <!-- [SUB-BLOQUE COMPONENTE: CONTADOR] -->
+        <div class="seccion-contador">
+            <p>La expectativa comienza en:</p>
+            <div class="contador">
+                <div class="bloque-tiempo">
+                    <span class="numero-tiempo" id="dias">00</span>
+                    <span class="etiqueta-tiempo">Días</span>
+                </div>
+                <div class="bloque-tiempo">
+                    <span class="numero-tiempo" id="horas">00</span>
+                    <span class="etiqueta-tiempo">Horas</span>
+                </div>
+                <div class="bloque-tiempo">
+                    <span class="numero-tiempo" id="minutos">00</span>
+                    <span class="etiqueta-tiempo">Min</span>
+                </div>
+                <div class="bloque-tiempo">
+                    <span class="numero-tiempo" id="segundos">00</span>
+                    <span class="etiqueta-tiempo">Seg</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- [SUB-BLOQUE COMPONENTE: DETALLES DE LA INVITACIÓN] -->
+        <div class="detalle-item">
+            <h3>¿Cuándo?</h3>
+            <p>Sábado, 30 de Mayo a las 9:30 PM.</p>
+        </div>
+
+        <div class="detalle-item">
+            <h3>¿Dónde?</h3>
+            <p>Es una sorpresa absoluta... Solo te diré que te va a encantar.</p>
+        </div>
+
+        <div class="detalle-item">
+            <h3>Código de Vestimenta</h3>
+            <p>Para estar a tono con el lugar, yo llevaré un jean negro, zapatos negros con suela blanca y una camisa nueva de manga corta. Te sugiero un atuendo similar: algo casual-elegante, cómodo pero espectacular, que combine perfectamente con mi look.</p>
+        </div>
+
+        <div class="detalle-item">
+            <h3>Logística de Transporte</h3>
+            <p>No te preocupes por cómo llegar, yo me encargo de todo. Este sábado a las 9:30 PM en punto, un carro privado estará esperándote en la <strong>Puerta 3 del Centro Comercial Mall Plaza</strong> para traerte hacia mí. (Placas por confirmar).</p>
+        </div>
+
+        <!-- [SUB-BLOQUE COMPONENTE: REPRODUCTOR SPOTIFY DINÁMICO] -->
+        <div class="seccion-playlist" style="background: #f0ebe1; padding: 20px; border-radius: 10px; margin-top: 25px; border: 1px dashed var(--color-acento);">
+            <h3 style="margin: 0 0 10px 0; font-size: 1rem; color: var(--color-principal);">La Banda Sonora de Nuestra Historia</h3>
+            <p style="font-size: 0.85rem; margin: 0 0 15px 0; color: #555; font-style: italic;">
+                "Cada día una canción diferente que ha marcado nuestro camino desde el día cero."
+            </p>
+            
+            <!-- REPRODUCTOR EMBED DE SPOTIFY: EL RETÉN (CHAMPETA) -->
+            <div id="contenedor-spotify">
+                <iframe src="https://open.spotify.com/embed/track/2CisUes0bW6f4Qh9h8L6j0?utm_source=generator" 
+                        width="100%" 
+                        height="152" 
+                        frameBorder="0" 
+                        allowfullscreen="" 
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                        loading="lazy"
+                        style="border-radius: 12px;">
+                </iframe>
+            </div>
+
+            <!-- NOTA DEL LOCUTOR ADAPTADA -->
+            <p class="nota-locutor">
+                🎙️ <strong>Nota de tu esposo:</strong> "Ya sabes que tengo todos los papeles en regla contigo... admitido y aceptado. Dale play, tira unos pases y prepárate, porque este sábado el retén lo pongo yo."
+            </p>
+        </div>
+
+            <!-- NOTA DEL LOCUTOR: Aquí escribes tu mensaje diario simulando tu introducción de radio -->
+            <p class="nota-locutor">
+                🎙️ <strong>Nota de tu esposo: (Día 1):</strong> "Esta champetica me recuerda la primera vez que te me atrevi a dedicarte una cancion... Dale play, cierra los ojos y viaja conmigo en el tiempo esa mañana..."
+            </p>
+        </div>
+
+    </div>
+
+    <!-- [BLOQUE 7: ARRANQUE Y LÓGICA JAVASCRIPT] -->
+    <script>
+        // --- SCRIPT DEL CONTADOR REGRESIVO (Configurado para el sábado 30 de Mayo de 2026 a las 21:30) ---
+        const fechaEvento = new Date('May 30, 2026 21:30:00').getTime();
+
+        const x = setInterval(function() {
+            const ahora = new Date().getTime();
+            const distancia = fechaEvento - ahora;
+
+            // Cálculos de tiempo para días, horas, minutos y segundos
+            const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+            // Inyectar valores en los bloques correspondientes de la interfaz
+            document.getElementById("dias").innerHTML = dias < 10 ? "0" + dias : dias;
+            document.getElementById("horas").innerHTML = horas < 10 ? "0" + horas : horas;
+            document.getElementById("minutos").innerHTML = minutos < 10 ? "0" + minutos : minutos;
+            document.getElementById("segundos").innerHTML = segundos < 10 ? "0" + segundos : segundos;
+
+            // Si la cuenta regresiva termina
+            if (distancia < 0) {
+                clearInterval(x);
+                document.querySelector(".seccion-contador").innerHTML = "<p style='color:var(--color-acento); font-weight:bold; margin:0;'>¡LLEGÓ EL MOMENTO! Te espero en nuestro lugar especial.</p>";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
