@@ -9,10 +9,9 @@
         /* [BLOQUE 0: IDENTIDAD Y VARIABLES GLOBALES] */
         :root {
             --color-principal: #111111;
-            --color-acento: #c5a880; /* Dorado elegante */
+            --color-acento: #c5a880;
             --color-fondo: #faf9f6;
             --color-texto: #333333;
-            --color-spotify: #1DB954;
         }
 
         body {
@@ -27,7 +26,6 @@
             min-height: 100vh;
         }
 
-        /* [BLOQUE 1: NÚCLEO Y VISTAS (CONTENEDOR PRINCIPAL)] */
         .tarjeta-invitacion {
             background: #ffffff;
             max-width: 450px;
@@ -41,186 +39,31 @@
             box-sizing: border-box;
         }
 
-        h1 {
-            font-family: 'Dancing Script', cursive;
-            color: var(--color-acento);
-            font-size: 2.8rem;
-            margin-bottom: 10px;
-        }
+        h1 { font-family: 'Dancing Script', cursive; color: var(--color-acento); font-size: 2.8rem; margin-bottom: 10px; }
+        .subtitulo { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; color: #777; margin-bottom: 25px; }
+        .linea-separadora { width: 60px; height: 2px; background-color: var(--color-acento); margin: 20px auto; }
 
-        .subtitulo {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #777;
-            margin-bottom: 25px;
-        }
+        /* [BLOQUE 2: CONTADOR] */
+        .seccion-contador { background-color: var(--color-principal); color: #fff; padding: 20px; border-radius: 10px; margin: 25px 0; }
+        .contador { display: flex; justify-content: space-around; }
+        .numero-tiempo { font-size: 1.8rem; font-weight: 600; color: #fff; }
+        .etiqueta-tiempo { font-size: 0.7rem; text-transform: uppercase; color: #aaa; }
 
-        .linea-separadora {
-            width: 60px;
-            height: 2px;
-            background-color: var(--color-acento);
-            margin: 20px auto;
-        }
+        /* [BLOQUE 3: DETALLES] */
+        .detalle-item { margin: 20px 0; text-align: left; padding-left: 15px; border-left: 3px solid var(--color-acento); }
+        .detalle-item h3 { margin: 0 0 5px 0; font-size: 1rem; color: var(--color-principal); }
+        .detalle-item p { margin: 0; font-size: 0.95rem; color: #555; line-height: 1.4; }
 
-        /* [BLOQUE 2: CONTADOR REGRESIVO] */
-        .seccion-contador {
-            background-color: var(--color-principal);
-            color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 25px 0;
-        }
-        
-        .seccion-contador p {
-            margin: 0 0 10px 0;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--color-acento);
-        }
-
-        .contador {
-            display: flex;
-            justify-content: space-around;
-        }
-
-        .bloque-tiempo {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .numero-tiempo {
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: #fff;
-        }
-
-        .etiqueta-tiempo {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            color: #aaa;
-        }
-
-        /* [BLOQUE 3: DETALLES DE LA CITA] */
-        .detalle-item {
-            margin: 20px 0;
-            text-align: left;
-            padding-left: 15px;
-            border-left: 3px solid var(--color-acento);
-        }
-
-        .detalle-item h3 {
-            margin: 0 0 5px 0;
-            font-size: 1rem;
-            color: var(--color-principal);
-        }
-
-        .detalle-item p {
-            margin: 0;
-            font-size: 0.95rem;
-            color: #555;
-            line-height: 1.4;
-        }
-
-        /* [BLOQUE 4: REPRODUCTOR NATIVO SEGURO] */
-        .seccion-playlist {
-            background: #f0ebe1;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 25px;
-            border: 1px dashed var(--color-acento);
-        }
-
-        .reproductor-seguro {
-            background: #111111;
-            color: white;
-            padding: 20px;
-            border-radius: 12px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-            text-decoration: none;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .reproductor-seguro:hover {
-            transform: scale(1.02);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-        }
-
-        .info-pista {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            width: 100%;
-            text-align: left;
-        }
-
-        .icono-musica {
-            font-size: 2rem;
-            background: var(--color-spotify);
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-        }
-
-        .texto-pista h4 {
-            margin: 0;
-            font-size: 1rem;
-            color: #ffffff;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .texto-pista p {
-            margin: 3px 0 0 0;
-            font-size: 0.8rem;
-            color: #b3b3b3;
-        }
-
-        .control-play {
-            background: var(--color-spotify);
-            color: white;
-            font-weight: 600;
-            font-size: 0.9rem;
-            padding: 12px 20px;
-            border-radius: 25px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            width: 100%;
-            justify-content: center;
-            box-sizing: border-box;
-        }
-
-        .nota-locutor {
-            font-size: 0.85rem;
-            margin-top: 15px;
-            color: var(--color-principal);
-            font-weight: 600;
-            text-align: left;
-            border-left: 2px solid var(--color-acento);
-            padding-left: 10px;
-            line-height: 1.4;
-        }
+        /* [BLOQUE 4: BOTÓN Y NOTA] */
+        .seccion-playlist { background: #f0ebe1; padding: 20px; border-radius: 10px; margin-top: 25px; border: 1px dashed var(--color-acento); }
+        .nota-locutor { font-size: 0.85rem; margin-top: 15px; color: var(--color-principal); font-weight: 600; text-align: left; border-left: 2px solid var(--color-acento); padding-left: 10px; line-height: 1.4; }
     </style>
 </head>
 <body>
 
     <div class="tarjeta-invitacion">
-        
         <h1>Para mi Esposa</h1>
         <div class="subtitulo">6 Años de Historia</div>
-        
         <p>No es nuestro aniversario, pero hoy me desperté con unas ganas inmensas de darte las gracias por estos 6 años juntos. Gracias por ser mi compañera, mi confidente y el amor de mi vida. Por eso, este sábado es nuestro.</p>
         
         <div class="linea-separadora"></div>
@@ -228,35 +71,16 @@
         <div class="seccion-contador">
             <p>La expectativa comienza en:</p>
             <div class="contador">
-                <div class="bloque-tiempo">
-                    <span class="numero-tiempo" id="dias">00</span>
-                    <span class="etiqueta-tiempo">Días</span>
-                </div>
-                <div class="bloque-tiempo">
-                    <span class="numero-tiempo" id="horas">00</span>
-                    <span class="etiqueta-tiempo">Horas</span>
-                </div>
-                <div class="bloque-tiempo">
-                    <span class="numero-tiempo" id="minutos">00</span>
-                    <span class="etiqueta-tiempo">Min</span>
-                </div>
-                <div class="bloque-tiempo">
-                    <span class="numero-tiempo" id="segundos">00</span>
-                    <span class="etiqueta-tiempo">Seg</span>
-                </div>
+                <div class="bloque-tiempo"><span class="numero-tiempo" id="dias">00</span><br><span class="etiqueta-tiempo">Días</span></div>
+                <div class="bloque-tiempo"><span class="numero-tiempo" id="horas">00</span><br><span class="etiqueta-tiempo">Horas</span></div>
+                <div class="bloque-tiempo"><span class="numero-tiempo" id="minutos">00</span><br><span class="etiqueta-tiempo">Min</span></div>
+                <div class="bloque-tiempo"><span class="numero-tiempo" id="segundos">00</span><br><span class="etiqueta-tiempo">Seg</span></div>
             </div>
         </div>
 
-        <div class="detalle-item">
-            <h3>¿Cuándo?</h3>
-            <p>Sábado, 30 de Mayo a las 9:30 PM.</p>
-        </div>
-
-        <div class="detalle-item">
-            <h3>¿Dónde?</h3>
-            <p>Es una sorpresa absoluta... Solo te diré que te va a encantar.</p>
-        </div>
-
+        <div class="detalle-item"><h3>¿Cuándo?</h3><p>Sábado, 30 de Mayo a las 9:30 PM.</p></div>
+        <div class="detalle-item"><h3>¿Dónde?</h3><p>Es una sorpresa absoluta... Solo te diré que te va a encantar.</p></div>
+        
         <div class="detalle-item">
             <h3>Código de Vestimenta</h3>
             <p>Para estar a tono con el lugar, yo llevaré un jean negro, zapatos negros con suela blanca y una camisa nueva de manga corta. Te sugiero un atuendo similar: algo casual-elegante, cómodo pero espectacular, que combine perfectamente con mi look.</p>
@@ -264,60 +88,30 @@
 
         <div class="detalle-item">
             <h3>Logística de Transporte</h3>
-            <p>No te preocupes por cómo llegar, yo me encargo de todo. Este sábado a las 9:30 PM en punto, un carro privado estará esperándote en la <strong>Puerta 3 del Centro Comercial Mall Plaza</strong> para traerte hacia mí. (Placas por confirmar).</p>
+            <p>No te preocupes por cómo llegar, yo me encargo de todo. Este sábado a las 9:30 PM en punto, un carro privado estará esperándote en la <strong>Puerta 3 del Centro Comercial Mall Plaza</strong> para traerte hacia mí.</p>
         </div>
 
         <div class="seccion-playlist">
             <h3 style="margin: 0 0 10px 0; font-size: 1rem; color: var(--color-principal);">La Banda Sonora de Nuestra Historia</h3>
-            <p style="font-size: 0.85rem; margin: 0 0 15px 0; color: #555; font-style: italic;">
-                "Cada día una canción diferente que ha marcado nuestro camino desde el día cero."
-            </p>
-            
-            <a href="https://open.spotify.com/track/47g8a9W8mP8X0M1G2H3I4K" target="_blank" class="reproductor-seguro">
-                <div class="info-pista">
-                    <div class="icono-musica">🎵</div>
-                    <div class="texto-pista">
-                        <h4>EL RETÉN - Remix</h4>
-                        <p>Twister, Koffee el Kafetero, Zaider</p>
-                    </div>
-                </div>
-                <div class="control-play">
-                    ▶ TIRA UNOS PASES EN SPOTIFY
+            <a href="https://www.youtube.com/watch?v=JnL399SRGNI" target="_blank" style="text-decoration: none;">
+                <div style="background: #FF0000; color: white; padding: 15px; border-radius: 12px; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                    <div style="font-size: 1.5rem;">▶</div>
+                    <div style="font-weight: 700;">Ver video en YouTube</div>
                 </div>
             </a>
-
-            <p class="nota-locutor">
-                🎙️ <strong>Nota de tu esposo:</strong> "Ya sabes que tengo todos los papeles en regla contigo... admitido y aceptado. Dale play, tira unos pases y prepárate, porque este sábado el retén lo pongo yo."
-            </p>
+            <p class="nota-locutor">🎙️ <strong>Nota de tu esposo:</strong> "Ya sabes que tengo todos los papeles en regla contigo... admitido y aceptado. Dale play, tira unos pases y prepárate, porque este sábado el retén lo pongo yo."</p>
         </div>
-
     </div>
 
     <script>
-        // --- SCRIPT DEL CONTADOR REGRESIVO (Configurado para el sábado 30 de Mayo de 2026 a las 21:30) ---
         const fechaEvento = new Date('May 30, 2026 21:30:00').getTime();
-
         const x = setInterval(function() {
             const ahora = new Date().getTime();
             const distancia = fechaEvento - ahora;
-
-            // Cálculos de tiempo para días, horas, minutos y segundos
-            const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
-            const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
-            const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
-
-            // Inyectar valores en los bloques correspondientes de la interfaz
-            document.getElementById("dias").innerHTML = dias < 10 ? "0" + dias : dias;
-            document.getElementById("horas").innerHTML = horas < 10 ? "0" + horas : horas;
-            document.getElementById("minutos").innerHTML = minutos < 10 ? "0" + minutos : minutos;
-            document.getElementById("segundos").innerHTML = segundos < 10 ? "0" + segundos : segundos;
-
-            // Si la cuenta regresiva termina
-            if (distancia < 0) {
-                clearInterval(x);
-                document.querySelector(".seccion-contador").innerHTML = "<p style='color:var(--color-acento); font-weight:bold; margin:0;'>¡LLEGÓ EL MOMENTO! Te espero en nuestro lugar especial.</p>";
-            }
+            document.getElementById("dias").innerHTML = Math.floor(distancia / (1000 * 60 * 60 * 24));
+            document.getElementById("horas").innerHTML = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById("minutos").innerHTML = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+            document.getElementById("segundos").innerHTML = Math.floor((distancia % (1000 * 60)) / 1000);
         }, 1000);
     </script>
 </body>
