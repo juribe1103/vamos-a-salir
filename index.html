@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Una Sorpresa para Ti</title>
-    <!-- [BLOQUE DE ESTILOS: FUENTES Y LOGICA VISUAL] -->
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         /* [BLOQUE 0: IDENTIDAD Y VARIABLES GLOBALES] */
@@ -146,7 +145,6 @@
 </head>
 <body>
 
-    <!-- [CONTRUCCIÓN VISUAL DE LA INVITACIÓN] -->
     <div class="tarjeta-invitacion">
         
         <h1>Para mi Esposa</h1>
@@ -156,7 +154,6 @@
         
         <div class="linea-separadora"></div>
 
-        <!-- [SUB-BLOQUE COMPONENTE: CONTADOR] -->
         <div class="seccion-contador">
             <p>La expectativa comienza en:</p>
             <div class="contador">
@@ -179,7 +176,6 @@
             </div>
         </div>
 
-        <!-- [SUB-BLOQUE COMPONENTE: DETALLES DE LA INVITACIÓN] -->
         <div class="detalle-item">
             <h3>¿Cuándo?</h3>
             <p>Sábado, 30 de Mayo a las 9:30 PM.</p>
@@ -200,41 +196,31 @@
             <p>No te preocupes por cómo llegar, yo me encargo de todo. Este sábado a las 9:30 PM en punto, un carro privado estará esperándote en la <strong>Puerta 3 del Centro Comercial Mall Plaza</strong> para traerte hacia mí. (Placas por confirmar).</p>
         </div>
 
-        <!-- [SUB-BLOQUE COMPONENTE: REPRODUCTOR SPOTIFY DINÁMICO] -->
-        <div class="seccion-playlist" style="background: #f0ebe1; padding: 20px; border-radius: 10px; margin-top: 25px; border: 1px dashed var(--color-acento);">
+        <div class="seccion-playlist">
             <h3 style="margin: 0 0 10px 0; font-size: 1rem; color: var(--color-principal);">La Banda Sonora de Nuestra Historia</h3>
             <p style="font-size: 0.85rem; margin: 0 0 15px 0; color: #555; font-style: italic;">
                 "Cada día una canción diferente que ha marcado nuestro camino desde el día cero."
             </p>
             
-            <!-- REPRODUCTOR EMBED DE SPOTIFY: EL RETÉN (CHAMPETA) -->
-           <div id="contenedor-spotify">
-    <iframe src="https://open.spotify.com/embed/track/2f66E7z5yCjA2gYQf3vDiz?utm_source=generator" 
-            width="100%" 
-            height="152" 
-            frameBorder="0" 
-            allowfullscreen="" 
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-            loading="lazy"
-            style="border-radius: 12px;">
-    </iframe>
-</div>
+            <div id="contenedor-spotify">
+                <iframe src="https://open.spotify.com/track/" 
+                        width="100%" 
+                        height="152" 
+                        frameBorder="0" 
+                        allowfullscreen="" 
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                        loading="lazy"
+                        style="border-radius: 12px;">
+                </iframe>
+            </div>
 
-            <!-- NOTA DEL LOCUTOR ADAPTADA -->
             <p class="nota-locutor">
-                🎙️ <strong>Nota de tu esposo:</strong> "Ya sabes que tengo todos los papeles en regla contigo... admitido y aceptado. Dale play, tira unos pases y prepárate, porque este sábado el retén lo pongo yo."
-            </p>
-        </div>
-
-            <!-- NOTA DEL LOCUTOR: Aquí escribes tu mensaje diario simulando tu introducción de radio -->
-            <p class="nota-locutor">
-                🎙️ <strong>Nota de tu esposo: (Día 1):</strong> "Esta champetica me recuerda la primera vez que te me atrevi a dedicarte una cancion... Dale play, cierra los ojos y viaja conmigo en el tiempo esa mañana..."
+                🎙️ <strong>Nota de tu esposo (Día 1):</strong> "Esta champetica me recuerda la primera vez que me atreví a dedicarte una canción... Ya sabes que tengo todos los papeles en regla contigo. Dale play, cierra los ojos y viaja conmigo en el tiempo..."
             </p>
         </div>
 
     </div>
 
-    <!-- [BLOQUE 7: ARRANQUE Y LÓGICA JAVASCRIPT] -->
     <script>
         // --- SCRIPT DEL CONTADOR REGRESIVO (Configurado para el sábado 30 de Mayo de 2026 a las 21:30) ---
         const fechaEvento = new Date('May 30, 2026 21:30:00').getTime();
@@ -252,7 +238,7 @@
             // Inyectar valores en los bloques correspondientes de la interfaz
             document.getElementById("dias").innerHTML = dias < 10 ? "0" + dias : dias;
             document.getElementById("horas").innerHTML = horas < 10 ? "0" + horas : horas;
-            document.getElementById("minutos").innerHTML = minutos < 10 ? "0" + minutos : minutos;
+            document.getElementById("minutos").innerHTML = minutos < 10 ? "0" + minutes : minutos;
             document.getElementById("segundos").innerHTML = segundos < 10 ? "0" + segundos : segundos;
 
             // Si la cuenta regresiva termina
